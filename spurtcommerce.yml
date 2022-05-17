@@ -1,0 +1,60 @@
+---
+- name: To install spurt commerce web application on Ubuntu 20.04
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update packages
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Running the script to install the NodeSource Node.js 14.x repo onto a Debian or Ubuntu system
+      get_url:
+        url: https://deb.nodesource.com/setup_14.x 
+        dest: /home/ubuntu/
+        become: yes
+
+    - name: Install nodejs
+      ansible.builtin.apt:
+        name: nodejs
+
+    - name: Install build-essentials
+      ansible.builtin.apt:
+        name: build-essential
+
+    - name: Install forever
+      community.general.npm:
+        name: forever
+        global: yes 
+        state: present
+    - name: Install forever
+      community.general.npm:
+        name: apidoc
+        global: yes 
+        state: present
+    - name: Install apache httpd
+      apt:
+        name: apache2
+        state: present
+    - name : To enable apache2 modules
+      apache2_module:
+        state: present
+        name: 
+          - 'proxy'
+          - 'proxy_http'
+          - 'headers'
+    - name: Restart service apache2
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
+    - name: Install mysql server
+      ansible.builtin.apt:
+        name: mysql-server
+      become: yes
+    - name: Set MySQL root Password
+      mysql_user:
+        login_host: 'localhost'
+        login_user: 'root'
+        login_password: ''
+        name: 'root'
+        password: '{{ mysql_pass }}'
+        state: present
