@@ -1,17 +1,5 @@
 # spurt-commerce
-## Downloading SpurtCommerce Zip file
-* Downloading spurtcommerce from git hub using the below command in server root (/home/ubuntu)
-```
-git clone https://github.com/sanjayreddyg/spurt-commerce/raw/main/Spurtcommerce_3.0.2_community_LTS.zip
-```
-* Install Unzip using the following command
-```
-sudo apt install unzip -y
-```
-* Unzipping spurtcommerce zip file
-```
-unzip Spurtcommerce.zip
-```
+
 ## Node Js Installation (Version — 14.x)
 * The Back-end API of Spurtcommerce is on NodeJS (v.14.x). 
 ```
@@ -90,12 +78,12 @@ sudo mysql -u root
  SELECT User, Host, plugin FROM mysql.user;
 ```
 ```
- ALTER USER 'root'@'ocalhost' IDENTIFIED WITH mysql_native_password BY '<PASSWORD>';
+ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<PASSWORD>';
 ```
 ```
  FLUSH PRIVILEGES;
 ```
-* Creating Database for Spurtcommerce
+### Creating Database for Spurtcommerce
 ```
  create database spurtcommerce;
 ```
@@ -114,7 +102,7 @@ exit
 ```
 
 ## Imagemagick Installation
-* You can install Imagemagick With the following commands.
+* We can install Imagemagick with the following commands;
 ```
 sudo apt update
 ```
@@ -127,7 +115,23 @@ sudo apt install imagemagick
 sudo npm install -g @angular/cli -y
 ```
 # Application Setup
+
 ## Back End API Setup
+
+## Downloading SpurtCommerce Zip file
+
+* Downloading spurtcommerce from git hub using the below command in server root (/home/ubuntu)
+```
+git clone https://github.com/sanjayreddyg/spurt-commerce/raw/main/Spurtcommerce_3.0.2_community_LTS.zip
+```
+* Install Unzip using the following command
+```
+sudo apt install unzip -y
+```
+* Unzipping spurtcommerce zip file
+```
+unzip Spurtcommerce.zip
+```
 * In api folder change 'bcrypt':'3.0.1' to 'bcrypt':'5.0.1' in a file package.json
 
 * Provide database name and password in " .env.production " and " .env " file in api folder.
