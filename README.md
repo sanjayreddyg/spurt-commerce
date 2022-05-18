@@ -2,9 +2,9 @@
 ## Downloading SpurtCommerce Zip file
 * Downloading spurtcommerce from git hub using the below command in server root (/home/ubuntu)
 ```
-git clone https://github.com/SriSuryaTej/spurtcommerce.git
+git clone https://github.com/sanjayreddyg/spurt-commerce/raw/main/Spurtcommerce_3.0.2_community_LTS.zip
 ```
-* Install Unzip Using the following command
+* Install Unzip using the following command
 ```
 sudo apt install unzip -y
 ```
@@ -174,4 +174,4 @@ npm run build
 ```
 sudo cp dist/browser/* /var/www/html
 ```
-*After copying successfully, open the browser and give `http://public_ip_address` You will be able to check the store 🙂.
+*After copying successfully, open the browser and go to `http://public_ip_address` and we will be able to see the store page...
